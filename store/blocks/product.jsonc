@@ -1,0 +1,48 @@
+{
+  "store.product": {
+    "children": [
+      "breadcrumb", //caminho do link onde o cliente esta
+      "flex-layout.row#main"
+    ]
+  },
+  "flex-layout.row#main": { 
+    "props": { 
+      "marginTop": 6
+    },
+    "children": [
+      "flex-layout.col#left",
+      "flex-layout.col#right"
+    ]
+  },
+  "flex-layout.col#left": {
+    "children": [
+      "product-images"
+    ]
+  },
+  "flex-layout.col#right": {    
+    "props": {
+      "preventVerticalStretch": true,
+      "verticalAlign": "middle"
+    },
+    "children": [
+      "product-name",
+      "product-identifier.product", //referencia do prduto
+      "product-price",
+      "flex-layout.row#qty-sku",
+      "buy-button"
+    ]
+  },
+  "product-price": {
+    "props": {
+      "showSavings": true,
+      "showListPrice": true
+    }
+  },
+  "flex-layout.row#qty-sku":{
+    "children":[
+      "sku-selector", // usaremos para mostrar a grade dos tanhos
+      "product-quantity", // usaremos para o cliente adicionar mais de um item
+      "shipping-simulator" // calculador de frete
+    ]
+  }
+}
